@@ -25,3 +25,7 @@
     color: rgb(214, 185, 17);
     cursor: pointer;
 }
+
+.grey-star-2:hover {
+    color: rgb(214, 185, 17);
+}

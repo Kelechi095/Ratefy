@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 const initialState = {
   userRating: [],
   averageRating: 0,
+  alert: ''
 };
 
 const ratingSlice = createSlice({
@@ -23,9 +24,12 @@ const ratingSlice = createSlice({
         state.averageRating =  averageRating === 1 || averageRating === 2 || averageRating === 3 || averageRating === 4 || averageRating === 5 ? averageRating : averageRating.toFixed(1)
       }
     },
+    setAlert(state, action) {
+        state.alert = action.payload
+    }
   },
 });
 
-export const { submitRating, calculateAverageRating } = ratingSlice.actions;
+export const { submitRating, calculateAverageRating, setAlert } = ratingSlice.actions;
 
 export default ratingSlice.reducer;

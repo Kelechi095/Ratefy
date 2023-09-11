@@ -3,10 +3,11 @@ import Stars2 from "../components/stars2/Stars2";
 import { useDispatch, useSelector } from "react-redux";
 import { calculateAverageRating, submitRating } from "../../redux/ratingSlice";
 import { useNavigate } from "react-router-dom";
+import { setAlert } from "../../redux/ratingSlice";
 
 const Rating = () => {
   const [rate, setRate] = useState(0);
-  const [opinion, setOpinion] = useState("");
+  const [review, setReview, alert] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -14,15 +15,22 @@ const Rating = () => {
   const handleSubmitRating = (e) => {
     const newRating = {
       rate,
-      opinion,
+      review,
     };
-    dispatch(submitRating(newRating));
-    dispatch(calculateAverageRating())
 
-    setRate(0);
-    setOpinion("");
-    navigate("/");
+    if (newRating.review === "") {
+      dispatch(setAlert("Review required"));
+    } else {
+      dispatch(submitRating(newRating));
+      dispatch(calculateAverageRating());
+
+      setRate(0);
+      setReview("");
+      navigate("/");
+    }
   };
+
+  console.log(alert);
 
   return (
     <div className="rating">
@@ -31,10 +39,11 @@ const Rating = () => {
       </div>
       <textarea
         placeholder="Your opinion..."
-        value={opinion}
-        onChange={(e) => setOpinion(e.target.value)}
+        value={review}
+        onChange={(e) => setReview(e.target.value)}
         required
       />
+      <p>{alert}</p>
       <button className="submit-rating" onClick={handleSubmitRating}>
         Sumbit Your Rating
       </button>
