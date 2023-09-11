@@ -6,6 +6,7 @@ import ProtectedRoutes from "./components/ProtectedRoutes";
 import Layout from "./components/layout/Layout";
 import Login from "./pages/login/Login";
 import { ToastContainer } from "react-toastify";
+import Rating from "./pages/Rating";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           }
         >
           <Route path="/" element={<Home />} />
+          <Route path="/rate" element={<Rating />} />
         </Route>
 
         <Route path="/register" element={<Register />} />

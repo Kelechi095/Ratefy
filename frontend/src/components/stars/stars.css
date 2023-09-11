@@ -14,3 +14,14 @@
     font-size: 37px;
     color: rgb(214, 185, 17);
 }
+.grey-star-2 {
+    font-size: 37px;
+    color: grey;
+    cursor: pointer;
+}
+
+.gold-star-2 {
+    font-size: 37px;
+    color: rgb(214, 185, 17);
+    cursor: pointer;
+}

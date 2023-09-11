@@ -68,7 +68,7 @@ label {
   padding: 4px;
   border-radius: 4px;
   border: none;
-  background: rgb(144, 118, 168);
+  background: rgb(141, 113, 167);
   color: white;
 }
 
@@ -102,4 +102,32 @@ label {
 
 .display {
   padding: 20px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.submit-rating {
+  padding: 6px 15px;
+  border: none;
+  background-color: rgb(141, 113, 167);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+textarea {
+  width: 80%;
+  padding: 3px 6px;
+  height: 150px;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #ccc;
+  margin-bottom: 40px;
 }
