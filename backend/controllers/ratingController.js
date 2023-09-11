@@ -25,7 +25,30 @@ const getRating = async (req, res) => {
   }
 };
 
+const getAverageRating = async (req, res) => {
+  try {
+    const userRating = await Rating.find();
+    const allRating = userRating.map((rate) => rate.rate);
+    if (allRating.length > 0) {
+      const totalRating = allRating.reduce((a, b) => a + b, 0);
+      const averageRating = totalRating / allRating.length;
+
+      const finalUserRating =
+        averageRating === 1 ||
+        averageRating === 2 ||
+        averageRating === 3 ||
+        averageRating === 4 ||
+        averageRating === 5
+          ? averageRating
+          : averageRating.toFixed(1);
+
+      res.status(200).json(finalUserRating);
+    }
+  } catch (err) {}
+};
+
 module.exports = {
   createRating,
   getRating,
+  getAverageRating
 };

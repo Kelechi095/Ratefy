@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Stars2 from "../components/stars2/Stars2";
 import { useDispatch, useSelector } from "react-redux";
-import { calculateAverageRating, submitRating } from "../../redux/ratingSlice";
+import {createRating, getAverageRating, getRating, submitRating } from "../../redux/ratingSlice";
 import { useNavigate } from "react-router-dom";
 import { setAlert } from "../../redux/ratingSlice";
 
@@ -19,10 +19,8 @@ const Rating = () => {
     };
 
     if (newRating.review === "") {
-      dispatch(setAlert("Review required"));
     } else {
-      dispatch(submitRating(newRating));
-      dispatch(calculateAverageRating());
+      dispatch(createRating(newRating));
 
       setRate(0);
       setReview("");
@@ -30,7 +28,6 @@ const Rating = () => {
     }
   };
 
-  console.log(alert);
 
   return (
     <div className="rating">

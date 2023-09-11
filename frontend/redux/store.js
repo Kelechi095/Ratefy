@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer, { getUserDetails } from "./authSlice";
-import ratingReducer, { calculateAverageRating } from "./ratingSlice"
+import ratingReducer from "./ratingSlice"
 
 export const store = configureStore({
   reducer: {
@@ -11,4 +11,3 @@ export const store = configureStore({
 
 
 store.dispatch(getUserDetails())
-store.dispatch(calculateAverageRating())
