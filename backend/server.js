@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/connectDB");
 const userRouter = require("./routes/userRoutes");
+const ratingRouter = require("./routes/ratingRoute");
 const morgan = require("morgan");
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(cookieParser());
 app.use(morgan('dev'))
 
 app.use("/api/v1/users", userRouter)
+app.use("/api/v1/rating", ratingRouter)
 
 const PORT = process.env.PORT || 5000;
 
