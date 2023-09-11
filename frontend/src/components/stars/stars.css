@@ -1,0 +1,16 @@
+.stars {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grey-star {
+    font-size: 37px;
+    color: grey;
+}
+
+.gold-star {
+    font-size: 37px;
+    color: rgb(214, 185, 17);
+}

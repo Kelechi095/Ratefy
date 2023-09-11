@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav>
       <Link to="/">
-        <h1>WriteBlock</h1>
+        <h1>Ratefy</h1>
       </Link>
       <div className="right-nav">
         <Link to="/profile">
