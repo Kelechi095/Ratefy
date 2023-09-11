@@ -1,0 +1,6 @@
+.home {
+    display: grid;
+    padding: 5px;
+    grid-template-columns: 1fr 6fr;
+    height: calc(100vh - 40px);
+}
